@@ -27,3 +27,7 @@ def product_item(request, id):
     review = Review.objects.all()
     form = ReviewForm()
     return render(request, "products/product-item.html", {'product': product, 'review': review,'review_form': form})
+    
+def search_products(request):
+    product = Product.objects.filter(name__icontains=request.GET['query'])
+    return render( request, "products/index.html", {'product': product})

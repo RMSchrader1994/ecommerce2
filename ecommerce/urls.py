@@ -27,6 +27,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_index, name='home'),
+    url(r'^search/', search_products, name='search'),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^products/', include(products_urls)),
     url(r'^cart/', include(cart_urls)),
